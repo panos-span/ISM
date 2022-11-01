@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ERP MANAGER</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!--logo-->
+    <link rel="icon" href="images/logo.png">
+
+</head>
+<body class="dark-mode">
+
+<nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Badge" width="60px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="customers.html" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Customers
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="manageCustomer.html">Manage Customer</a></li>
+                        <li><a class="dropdown-item" href="extract.html">Extract Customer History</a></li>
+                        <li><a class="dropdown-item" href="managePurchase.html">Manage Purchase</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Products
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="manageProduct.html">Manage Product</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="promote.html">Promote</a>
+                </li>
+            </ul>
+
+
+            <div class="nav-item btn-group bg-primary">
+                <a class="nav-link dropdown-toggle text-black bg-primary" href="#" role="button"
+                   data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    Ρόλος
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal" href="login.html">Sign
+                        out</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title" style="color: black">Sign Out</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body" style="color: black">
+                Are you sure you want to sign out?
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <a href="login.html" style="color: white">
+                    <button type="button" class="btn btn-primary">Sign Out</button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="text-center" style="margin-top: 100px">
+    <h1>Actions</h1>
+</div>
+
+<div class="grid-container2">
+    <div class="grid-item grid-item-1">
+        <a href="manageCustomer.html">
+            <button class="button">Manage Customer
+            </button>
+        </a>
+    </div>
+    <div class="grid-item grid-item-2">
+        <a href="extract.html">
+            <button class="button">Extract Data
+            </button>
+        </a>
+    </div>
+    <div class="grid-item grid-item-3">
+        <a href="managePurchase.html">
+            <button class="button">Manage Purchase
+            </button>
+        </a>
+    </div>
+</div>
+
+</body>
+<script src="js/bootstrap.bundle.min.js"></script>
+</html>

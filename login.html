@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Clients</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!--logo-->
+    <link rel="icon" href="images/logo.png">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+          rel="stylesheet" type='text/css'>
+
+</head>
+<body class="dark-mode">
+
+
+<div class="container center-screen">
+    <form action="" class="row g-3 needs-validation">
+        <h1>Login</h1>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                   aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="">
+            <span class="input-group-text">
+                <i class="fa fa-eye" id="togglePassword" style="cursor: pointer"></i>
+            </span>
+        </div>
+        <button type="submit" class="btn btn-primary text-center">Login</button>
+
+
+    </form>
+</div>
+
+</body>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password");
+
+    togglePassword.addEventListener("click", function () {
+
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        // toggle the eye icon
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+
+</html>
