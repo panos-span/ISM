@@ -112,75 +112,118 @@
 <br>
 <br>
 <br>
-<!-- Search -->
+
 <div class="container text-center">
-    <form role="search">
-        <div class="row justify-content-center">
-            <div class="col col-lg-5">
-                <input class="form-control me-sm-6" type="search" placeholder="Search client" aria-label="Search">
+    <!-- Search -->
+    <form action="" type="POST">
+        <div class="container text-center">
+            <form role="search">
+                <div class="row justify-content-center">
+                    <div class="col col-lg-5">
+                        <input class="form-control me-sm-6" type="search" placeholder="Search client"
+                               aria-label="Search">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <!-- Table -->
+        <div class="container text-center">
+
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="table-responsive-md">
+                        <table class="table bg-white caption-top">
+                            <caption class="bg-white text-center"><h4>Jacob Thornton</h4></caption>
+                            <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+
+                                <td>093</td>
+                                <td>250 <i class="bi bi-currency-euro"></i></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>034</td>
+                                <td>32 <i class="bi bi-currency-euro"></i></td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+
+                                <td>143</td>
+                                <td>78 <i class="bi bi-currency-euro"></i></td>
+                                <td>1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <label>Start Date:
+                <input type="date" id="startdateId"
+                       value=""
+                       min="" max="" class="form-control">
+            </label>
+
+
+            <label>End Date:
+                <input type="date" id="enddateId"
+                       value=""
+                       min="" max="" class="form-control">
+            </label>
+
+            <br>
+            <br>
+
+            <label for="sum" class="form-label">Total: 360 <i class="bi bi-currency-euro"></i></label>
+            <br>
+            <label for="average" class="form-label">Average: 120 <i class="bi bi-currency-euro"></i></label>
+
+
+            <br>
+            <br>
+
+            <div class="d-grid gap-2 col-5 mx-auto">
+                <button class="btn btn-primary" type="submit">Extract</button>
             </div>
         </div>
     </form>
 </div>
 
-<br>
-<br>
-<br>
-<!-- Table -->
-<div class="container text-center">
-
-    <div class="row justify-content-center">
-        <div class="col-4">
-            <div class="table-responsive-md">
-                <table class="table bg-white caption-top">
-                    <caption class="bg-white text-center"><h4>Jacob Thornton</h4></caption>
-                    <thead>
-                    <tr>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-
-                        <td>093</td>
-                        <td>250 <i class="bi bi-currency-euro"></i></td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>034</td>
-                        <td>32 <i class="bi bi-currency-euro"></i></td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-
-                        <td>143</td>
-                        <td>78 <i class="bi bi-currency-euro"></i></td>
-                        <td>1</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <label for="sum" class="form-label">Total: 360 <i class="bi bi-currency-euro"></i></label>
-    <br>
-    <label for="average" class="form-label">Average: 120 <i class="bi bi-currency-euro"></i></label>
-
-    <br>
-    <br>
-    <form action="" type="submit">
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-primary" type="submit">Extract</button>
-        </div>
-    </form>
-</div>
 
 </body>
 <!-- Scripts -->
 <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
 <script src="js/scripts.js"></script> <!-- Custom scripts -->
 <script src="js/bootstrap.bundle.min.js"></script>
+<!-- Calendar Scripts -->
+<script>
+    $(function () {
+        var start = document.getElementById('startdateId');
+        var end = document.getElementById('enddateId');
+
+        start.addEventListener('change', function () {
+            if (start.value)
+                end.min = start.value;
+        }, false);
+
+        end.addEventListener('change', function () {
+            if (end.value)
+                start.max = end.value;
+        }, false);
+
+    });
+</script>
+
 </html>
