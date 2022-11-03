@@ -1,105 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>ERP MANAGER</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
-          rel="stylesheet" type='text/css'>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+        type='text/css'>
     <!--logo-->
     <link rel="icon" href="images/logo.png">
 
 </head>
+
 <body class="dark-mode">
 
-<nav class="navbar navbar-expand-lg bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Badge" width="60px"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="customers.html" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Customers
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="manageCustomer.html">Manage Customer</a></li>
-                        <li><a class="dropdown-item" href="extract.html">Extract Customer History</a></li>
-                        <li><a class="dropdown-item" href="managePurchase.html">Manage Purchase</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">
-                        Products
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="manageProduct.html">Manage Product</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="promote.html">Promote</a>
-                </li>
-            </ul>
-
-            <div class="nav-item btn-group bg-primary">
-                <a class="nav-link dropdown-toggle text-black bg-primary" href="#" role="button"
-                   data-bs-toggle="dropdown"
-                   aria-expanded="false">
-                    Ρόλος
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal" href="login.html">Sign
-                        out</a>
+    <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Badge" width="60px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="customers.html" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Customers
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="manageCustomer.html">Manage Customer</a></li>
+                            <li><a class="dropdown-item" href="extract.html">Extract Customer History</a></li>
+                            <li><a class="dropdown-item" href="managePurchase.html">Manage Purchase</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="manageProduct.html">Manage Product</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="promote.html">Promote</a>
+                    </li>
                 </ul>
+
+                <div class="nav-item btn-group bg-primary">
+                    <a class="nav-link dropdown-toggle text-black bg-primary" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Ρόλος
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal" href="login.html">Sign
+                            out</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title" style="color: black">Sign Out</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" style="color: black">
+                    Are you sure you want to sign out?
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <a href="login.html" style="color: white">
+                        <button type="button" class="btn btn-primary">Sign Out</button>
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
-</nav>
 
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title" style="color: black">Sign Out</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <div class="container text-center" style="margin-top: 50px">
+        <form class="d-flex" role="search">
+            <input class="form-control me-sm-5" type="search" placeholder="Search Product" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"> <i class="fa fa-search"></i></button>
+        </form>
+        <br>
+        <br>
+        <form>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Name"
+                        value="ex: ABCDEFG ">
+                    <label for="floatingInputGrid" style="color: red;">Name</label>
+                </div>
             </div>
-
-            <!-- Modal body -->
-            <div class="modal-body" style="color: black">
-                Are you sure you want to sign out?
+            <br>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="number" min="0.00" step="0.01" class="form-control" id="floatingInputGrid"
+                        placeholder="Price" value="0">
+                    <label for="floatingInputGrid" style="color: red;">Price</label>
+                </div>
             </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                <a href="login.html" style="color: white">
-                    <button type="button" class="btn btn-primary">Sign Out</button>
-                </a>
+            <br>
+            <div class="col-md">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Category"
+                        value="ex: Clothing">
+                    <label for="floatingInputGrid" style="color: black;">Category</label>
+                </div>
             </div>
-
-        </div>
+            <br>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Description" id="floatingTextarea2"
+                    style="height: 100px"></textarea>
+                <label for="floatingTextarea2" style="color: black;">Details</label>
+            </div>
+            <br>
+            <div class="container text-center">
+                <div class="row justify-content-center"></div>
+                <form action="" type="submit">
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </form>
     </div>
-</div>
 
-<div class="container text-center" style="margin-top: 100px">
-    <form class="d-flex" role="search">
-        <input class="form-control me-sm-5" type="search" placeholder="Search Product" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit"> <i class="fa fa-search"></i></button>
-    </form>
-</div>
 
 
 </body>
@@ -107,4 +152,5 @@
 <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
 <script src="js/scripts.js"></script> <!-- Custom scripts -->
 <script src="js/bootstrap.bundle.min.js"></script>
+
 </html>
