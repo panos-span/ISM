@@ -6,8 +6,7 @@
     <title>ERP MANAGER</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
-          rel="stylesheet" type='text/css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!--logo-->
     <link rel="icon" href="images/logo.png">
 
@@ -33,7 +32,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="manageCustomer.html">Manage Customer</a></li>
-                        <li><a class="dropdown-item" href="extract.html">Extract Customer History</a></li>
+                        <li><a class="dropdown-item" href="purchaseHistory.html">Customer History</a></li>
                         <li><a class="dropdown-item" href="managePurchase.html">Manage Purchase</a></li>
                     </ul>
                 </li>
@@ -89,26 +88,45 @@
 </div>
 
 <div class="container text-center" style="margin-top: 50px">
-    <form class="d-flex" role="search">
-        <input class="form-control me-sm-5" type="search" placeholder="Search Customer" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit"> <i class="fa fa-search"></i></button>
+    <form role="search">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+                        <input class="form-control" list="search_list" type="search" id="search"
+                               placeholder="Search Existing Customer" aria-label="Search">
+                        <datalist id="search_list">
+                            <option value="Nolis Dellatolis">
+                            <option value="Mallikoko Theo">
+                            <option value="Natalie Spartinou">
+                            <option value="Spyrakos">
+                            <option value="Alexios">
+                        </datalist>
+                        <label for="search" class="text-black">Search Existing Customer</label>
+                    </div>
+                    <button class="btn input-group-text bg-success" type="submit"><i
+                            class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
     </form>
     <br>
+    <hr>
     <br>
-    <form>
+    <form class="was-validated">
         <div class="row g-2">
             <div class="col-md">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Name"
-                        value="ex: Emmanouil">
-                    <label for="floatingInputGrid" style="color: red;">Name</label>
+                    <input type="text" class="form-control" id="floatingInputGrid1" placeholder="Name"
+                           value="" required>
+                    <label for="floatingInputGrid1" class="text-black">Name</label>
                 </div>
             </div>
             <div class="col-md">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Surname"
-                        value="ex: Dellatolas">
-                    <label for="floatingInputGrid" style="color: red;">Surname</label>
+                    <input type="text" class="form-control" id="floatingInputGrid2" placeholder="Surname"
+                           value="" required>
+                    <label for="floatingInputGrid2" class="text-black">Surname</label>
                 </div>
             </div>
         </div>
@@ -116,16 +134,16 @@
         <div class="row g-2">
             <div class="col-md">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="VAT"
-                        value="123456789">
-                    <label for="floatingInputGrid" style="color: black;">VAT</label>
+                    <input type="text" class="form-control" id="floatingInputGrid3" placeholder="VAT"
+                           value="123456789">
+                    <label for="floatingInputGrid3" class="text-black">VAT</label>
                 </div>
             </div>
             <div class="col-md">
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com"
-                        value="abc@example.com">
-                    <label for="floatingInputGrid" style="color: red;">E-mail</label>
+                    <input type="email" class="form-control" id="floatingInputGrid4" placeholder="name@example.com"
+                           value="" required>
+                    <label for="floatingInputGrid4" class="text-black">E-mail</label>
                 </div>
             </div>
         </div>
@@ -133,16 +151,16 @@
         <div class="row g-2">
             <div class="col-md">
                 <div class="form-floating">
-                    <input type="tel" class="form-control" id="floatingInputGrid" placeholder="Phone1"
-                        value="2100000000">
-                    <label for="floatingInputGrid" style="color: red;">Phone 1</label>
+                    <input type="tel" class="form-control" id="floatingInputGrid5" placeholder="Phone1"
+                           value="" required>
+                    <label for="floatingInputGrid5" class="text-black">Phone 1</label>
                 </div>
             </div>
             <div class="col-md">
                 <div class="form-floating">
-                    <input type="tel" class="form-control" id="floatingInputGrid" placeholder="Phone2"
-                        value="6900000000">
-                    <label for="floatingInputGrid" style="color: black;">Phone 2</label>
+                    <input type="tel" class="form-control" id="floatingInputGrid6" placeholder="Phone2"
+                           value="6900000000">
+                    <label for="floatingInputGrid6" style="color: black;">Phone 2</label>
                 </div>
             </div>
         </div>
@@ -150,23 +168,24 @@
         <div class="row g-2">
             <div class="col-md">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="Street"
-                        value="ex: Evrou 11">
-                    <label for="floatingInputGrid" style="color: black;">Street</label>
+                    <input type="text" class="form-control" id="floatingInputGrid7" placeholder="Street"
+                           value="ex: Evrou 11">
+                    <label for="floatingInputGrid7" style="color: black;">Street</label>
                 </div>
             </div>
             <div class="col-md">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingInputGrid" placeholder="City"
-                        value="ex: Athens">
-                    <label for="floatingInputGrid" style="color: black;">City</label>
+                    <input type="text" class="form-control" id="floatingInputGrid8" placeholder="City"
+                           value="ex: Athens">
+                    <label for="floatingInputGrid8" style="color: black;">City</label>
                 </div>
             </div>
         </div>
         <br>
-        <div class="form-floating"> 
-            <textarea class="form-control" placeholder="Details" id="floatingTextarea2" style="height: 100px"></textarea> 
-            <label for="floatingTextarea2" style = "color: black;">Details</label>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Details" id="floatingTextarea2"
+                      style="height: 100px"></textarea>
+            <label for="floatingTextarea2" style="color: black;">Details</label>
         </div>
         <br>
         <div class="container text-center">

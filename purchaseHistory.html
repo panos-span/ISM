@@ -32,7 +32,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="manageCustomer.html">Manage Customer</a></li>
-                        <li><a class="dropdown-item" href="extract.html">Extract Customer History</a></li>
+                        <li><a class="dropdown-item" href="purchaseHistory.html">Customer History</a></li>
                         <li><a class="dropdown-item" href="managePurchase.html">Manage Purchase</a></li>
                     </ul>
                 </li>
@@ -43,11 +43,6 @@
                     <a class="nav-link active" aria-current="page" href="promote.html">Promote</a>
                 </li>
             </ul>
-            <a class="btn btn-primary text-black bg-primary" data-bs-toggle="offcanvas" href="#offcanvasExample"
-               role="button"
-               aria-controls="offcanvasExample" style="margin-right: 20px">
-                Help
-            </a>
             <div class="nav-item btn-group bg-primary">
                 <a class="nav-link dropdown-toggle text-black bg-primary" href="#" role="button"
                    data-bs-toggle="dropdown"
@@ -91,34 +86,30 @@
     </div>
 </div>
 
-<!-- OffCanvas -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header show text-bg-dark">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Help</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body show text-bg-dark">
-        <div>
 
-        </div>
-    </div>
-</div>
 <br>
 <br>
 <br>
 
 <div class="container text-center">
     <!-- Search -->
-    <form action="" type="POST">
-        <div class="container text-center">
-            <form role="search">
-                <div class="row justify-content-center">
-                    <div class="col col-lg-5">
-                        <input class="form-control me-sm-6" type="search" placeholder="Search client"
-                               aria-label="Search">
-                    </div>
+    <form action="" type="POST" class="was-validated">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+
+                <div class="form-floating">
+                    <input class="form-control" list="search_list" type="search" id="search"
+                           placeholder="Search Existing Customer" aria-label="Search" required>
+                    <datalist id="search_list">
+                        <option value="Nolis Dellatolis">
+                        <option value="Mallikoko Theo">
+                        <option value="Natalie Spartinou">
+                        <option value="Spyrakos">
+                        <option value="Alexios">
+                    </datalist>
+                    <label for="search" class="text-black">Select Customer</label>
                 </div>
-            </form>
+            </div>
         </div>
 
         <br>
@@ -128,7 +119,7 @@
         <div class="container text-center">
 
             <div class="row justify-content-center">
-                <div class="col-4">
+                <div class="col-6">
                     <div class="table-responsive-md">
                         <table class="table bg-white caption-top">
                             <caption class="bg-white text-center"><h4>Jacob Thornton</h4></caption>
@@ -180,15 +171,15 @@
             <br>
             <br>
 
-            <label for="sum" class="form-label">Total: 360 <i class="bi bi-currency-euro"></i></label>
+            <label for="sum" class="form-label">Total: 360<i class="bi bi-currency-euro"></i></label>
             <br>
-            <label for="average" class="form-label">Average: 120 <i class="bi bi-currency-euro"></i></label>
+            <label for="average" class="form-label">Average: 120<i class="bi bi-currency-euro"></i></label>
 
 
             <br>
             <br>
 
-            <div class="d-grid gap-2 col-5 mx-auto">
+            <div class="d-grid gap-2 col-6 mx-auto">
                 <button class="btn btn-primary" type="submit">Extract</button>
             </div>
         </div>
@@ -202,22 +193,7 @@
 <script src="js/scripts.js"></script> <!-- Custom scripts -->
 <script src="js/bootstrap.bundle.min.js"></script>
 <!-- Calendar Scripts -->
-<script>
-    $(function () {
-        var start = document.getElementById('startdateId');
-        var end = document.getElementById('enddateId');
-
-        start.addEventListener('change', function () {
-            if (start.value)
-                end.min = start.value;
-        }, false);
-
-        end.addEventListener('change', function () {
-            if (end.value)
-                start.max = end.value;
-        }, false);
-
-    });
+<script src="js/calendar.js">
 </script>
 
 </html>

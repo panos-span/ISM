@@ -17,7 +17,7 @@ CREATE TABLE Customer(
     VAT VARCHAR(255),
     Address VARCHAR(255),
     Email VARCHAR(255) NOT NULL,
-    Details LONGTEXT NOT NULL
+    Details LONGTEXT
 );
 
 CREATE TABLE Customer_Phones(

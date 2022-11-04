@@ -17,20 +17,25 @@
 
 
 <div class="container center-screen">
-    <form action="" class="row g-3 needs-validation">
+    <form action="" type="POST" class="row g-3 needs-validation">
         <h1>Login</h1>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                   aria-describedby="basic-addon1" required>
+            <span class="input-group-text">@</span>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                <label for="username" class="text-black">Username</label>
+            </div>
         </div>
         <div class="input-group mb-3">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password"
-                   value="" required aria-label="Password"
-                   aria-describedby="basic-addon1">
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                       value="" aria-label="Password"
+                       aria-describedby="basic-addon1" required>
+                <label for="password" class="text-black">Password</label>
+            </div>
             <span class="input-group-text">
-                    <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer"></i>
-                </span>
+                <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer"></i>
+            </span>
         </div>
         <button type="submit" class="btn btn-primary text-center">Submit</button>
 
