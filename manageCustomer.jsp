@@ -24,14 +24,12 @@
 %>
 <jsp:forward page="login.jsp"/>
 <%
-        //response.sendRedirect("http://localhost:8080/WebApp_war_exploded/login.jsp");
     }
 
     if (!role.equals("Salesman")) {
 %>
 <jsp:forward page="index.jsp"/>
 <%
-        //response.sendRedirect("http://localhost:8080/WebApp_war_exploded/index.jsp");
     }
 
     String action = (String) request.getAttribute("action");
@@ -107,7 +105,7 @@
             Name = rs1.getString("Name");
             Surname = rs1.getString("Surname");
             Vat = rs1.getString("VAT");
-            Id = rs1.getString("Id");
+            Id = rs1.getString("ID");
             Address = rs1.getString("Address").split(", ", 2);
             Email = rs1.getString("Email");
             Details = rs1.getString("Details");
@@ -117,15 +115,19 @@
 
             rs1.close();
 
-            ResultSet rs2 = customer.searchCustomerPhones(cust_id);
-            int index = 0;
+            ResultSet rs2 = customer.searchCustomerPhones(Id);
             while (rs2.next()) {
-                phones[index] = rs2.getString("Phone");
-                index++;
+                phones[rs2.getInt("POSITION") - 1] = rs2.getString("Phone");
             }
+
             session.setAttribute("edit", Id);
             rs2.close();
+        } else {
+            session.setAttribute("edit", null);
+            cust = null;
         }
+    } else {
+        session.setAttribute("edit", null);
     }
 
 %>
@@ -274,6 +276,7 @@
             btn.textContent = "Edit";
         } else {
             btn.textContent = "Insert";
+            window.location.href = 'manageCustomer.jsp';
         }
     });
 
