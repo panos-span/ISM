@@ -12,6 +12,8 @@ public class ProductDAO {
 
     private PreparedStatement productprice = null;
     private final String getProductPrice = "select Price from product where ID=?;";
+    private PreparedStatement search = null, stmt1 = null;
+    private final String searchProduct = ";";
 
     private Statement stmt = null;
     private ResultSet rs = null;
@@ -89,7 +91,6 @@ public class ProductDAO {
             throw new RuntimeException(e);
         }
     }
-
     public void insertNewProduct(String[] params) {
         if (dbConnection.getCon() == null) {
             return;
@@ -110,24 +111,25 @@ public class ProductDAO {
         }
     }
 
-        public void editProduct(String[] params, String id) {
-            if (dbConnection.getCon() == null) {
-                return;
-                //throw new SQLException(errorMessages); String id,String name,String surname,String vat,String address,String email,String details
-            }
+    public void editProduct(String[] params, String id) {
+        if (dbConnection.getCon() == null) {
+            return;
+            //throw new SQLException(errorMessages); String id,String name,String surname,String vat,String address,String email,String details
+        }
 
-            try {
-                String editQuery = "update product set Name=?, Price=?, Category=?, Description=? WHERE (ID=?);";
-                stmt = dbConnection.getCon().prepareStatement(editQuery);
-                stmt.setInteger(5, Integer.parseInt(id));
-                stmt.setString(1, params[0]);
-                stmt.setDouble(2, Double.parseDouble(params[1]));
-                stmt.setString(3, params[2]);
-                stmt.setString(4, params[3]);
-                stmt.executeUpdate();
-                stmt.close();
-            } catch (Exception e) {
-                //this is an exception
-            }
+        try {
+            String editQuery = "update product set Name=?, Price=?, Category=?, Description=? WHERE (ID=?);";
+            stmt1 = dbConnection.getCon().prepareStatement(editQuery);
+            stmt1.setInt(5, Integer.parseInt(id));
+            stmt1.setString(1, params[0]);
+            stmt1.setDouble(2, Double.parseDouble(params[1]));
+            stmt1.setString(3, params[2]);
+            stmt1.setString(4, params[3]);
+            stmt1.executeUpdate();
+            stmt1.close();
+        } catch (Exception e) {
+            //this is an exception
         }
     }
+}
+
